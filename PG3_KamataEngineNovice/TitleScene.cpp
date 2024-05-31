@@ -17,4 +17,5 @@ void TitleScene::Draw()
 {
 	//debug用
 	Novice::ScreenPrintf(100, 360, "Title");
+	Novice::ScreenPrintf(100, 400, "Press Space To Stage");
 }
