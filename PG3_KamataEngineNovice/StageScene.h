@@ -3,6 +3,9 @@
 #include "InputHandle.h"
 #include "ICommand.h"
 #include "Player.h"
+#include "StageSceneInputHandler.h"
+#include "Selector.h"
+#include "IStageSceneCommand.h"
 
 class StageScene : public IScene
 {
@@ -16,4 +19,8 @@ private:
 	InputHandle* inputHandler_ = nullptr;
 	ICommand* iCommand_ = nullptr;
 	Player* player_ = nullptr;
+
+	StageSceneInputHandler* inputHandler1_ = nullptr;
+	Selector* selector_ = nullptr;
+	IStageSceneCommand* command_ = nullptr;
 };

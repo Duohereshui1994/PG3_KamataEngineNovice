@@ -14,6 +14,12 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="commands">
+      <UniqueIdentifier>{31ac07bc-1285-4655-a226-2d6b720d1bcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="commands\stageScene">
+      <UniqueIdentifier>{255fb2b2-554d-4a23-871c-233f41967bf5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\DirectXCommon.cpp">
@@ -52,6 +58,33 @@
     </ClCompile>
     <ClCompile Include="TitleScene.cpp">
       <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="ICommand.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandle.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="IStageSceneCommand.cpp">
+      <Filter>commands\stageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Selector.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectorCommand.cpp">
+      <Filter>commands\stageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitCommand.cpp">
+      <Filter>commands\stageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="StageSceneInputHandler.cpp">
+      <Filter>commands\stageScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -131,5 +164,22 @@
     <ClInclude Include="IScene.h" />
     <ClInclude Include="StageScene.h" />
     <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="ICommand.h" />
+    <ClInclude Include="InputHandle.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="IStageSceneCommand.h">
+      <Filter>commands\stageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Selector.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="SelectorCommand.h">
+      <Filter>commands\stageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitCommand.h">
+      <Filter>commands\stageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="StageSceneInputHandler.h">
+      <Filter>commands\stageScene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -29,6 +29,15 @@ void StageScene::Update(char keys[], char preKeys[])
 	}
 
 	player_->Update();
+
+	this->inputHandler1_->UpdateKeyState();
+
+	if (selector_->GetSelectMode() == Mode::SELECTOR) {
+		this->command_ = inputHandler1_->SelectorHandleInput(this->selector_);
+	}
+	else if(selector_->GetSelectMode() == Mode::UNIT){
+		
+	}
 }
 
 void StageScene::Draw()
