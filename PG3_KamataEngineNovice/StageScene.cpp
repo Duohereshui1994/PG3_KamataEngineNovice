@@ -10,6 +10,8 @@ void StageScene::Init()
 	inputHandler_ = new InputHandle();
 	inputHandler_->AssignMoveLeftCommand2PressKeyA();
 	inputHandler_->AssignMoveRightCommand2PressKeyD();
+	inputHandler_->AssignMoveUpCommand2PressKeyW();
+	inputHandler_->AssignMoveDownCommand2PressKeyS();
 
 	player_ = new Player();
 }

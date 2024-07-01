@@ -34,3 +34,13 @@ void Player::MoveLeft()
 	this->pos_.x -= speed_;
 }
 
+void Player::MoveUp()
+{
+	this->pos_.y -= speed_;
+}
+
+void Player::MoveDown()
+{
+	this->pos_.y += speed_;
+}
+

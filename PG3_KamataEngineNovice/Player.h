@@ -14,6 +14,8 @@ public:
 	//メンバ変数
 	void MoveRight();
 	void MoveLeft();
+	void MoveUp();
+	void MoveDown();
 
 private:
 	//座標
