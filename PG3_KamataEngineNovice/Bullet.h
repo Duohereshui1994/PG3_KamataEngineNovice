@@ -6,7 +6,7 @@ class Bullet
 public:
 	Bullet();
 	~Bullet();
-	void Initalize();
+	void Initialize();
 	void Update();
 	void Draw();
 

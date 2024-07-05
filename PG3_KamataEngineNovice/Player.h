@@ -1,11 +1,12 @@
 #pragma once
+#include <vector>
 #include "Vector2.h"
 #include "Novice.h"
 #include "Bullet.h"
 class Player
 {
 public:
-	Bullet bullet[10];
+	std::vector<Bullet> bullets_;
 	//コンストラクタ
 	Player();
 

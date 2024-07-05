@@ -15,7 +15,7 @@ Bullet::~Bullet()
 
 }
 
-void Bullet::Initalize()
+void Bullet::Initialize()
 {
 	pos_.x = -100.0f;
 	pos_.y = -100.0f;
@@ -27,7 +27,7 @@ void Bullet::Update()
 	if (isShot_) {
 		pos_.x += speed_;
 		if (pos_.x > 1280) {
-			Initalize();
+			Initialize();
 		}
 	}
 }

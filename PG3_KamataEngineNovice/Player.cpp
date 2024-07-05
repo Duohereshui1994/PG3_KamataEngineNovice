@@ -10,6 +10,8 @@ Player::Player()
 	height = 64.0f;
 	isAlive_ = true;
 	CD = 0;
+
+	bullets_.resize(10);
 }
 
 void Player::Init()
@@ -20,26 +22,26 @@ void Player::Init()
 	hp_ = hpMax_;
 	isAlive_ = true;
 	CD = 0;
-	for (int i = 0; i < 10; i++)
+	for (auto& bullet : bullets_)
 	{
-		bullet[i].Initalize();
+		bullet.Initialize();
 	}
 }
 
 void Player::Update()
 {
-	for (int i = 0; i < 10; i++)
+	for (auto& bullet : bullets_)
 	{
-		bullet[i].Update();
+		bullet.Update();
 	}
 }
 
 void Player::Draw()
 {
 	//描画
-	for (int i = 0; i < 10; i++)
+	for (auto& bullet : bullets_)
 	{
-		bullet[i].Draw();
+		bullet.Draw();
 	}
 	Novice::DrawBox(int(pos_.x), int(pos_.y), int(width), int(height), 0.0f, WHITE, kFillModeSolid);
 }
@@ -66,11 +68,11 @@ void Player::MoveDown()
 
 void Player::Shoot()
 {
-	for (int i = 0; i < 10; i++)
+	for (auto& bullet : bullets_)
 	{
-		if (bullet[i].GetIsShot() == false) {
-			bullet[i].SetPos(pos_);
-			bullet[i].SetIsShot(true);
+		if (bullet.GetIsShot() == false) {
+			bullet.SetPos(pos_);
+			bullet.SetIsShot(true);
 			break;
 		}
 	}
