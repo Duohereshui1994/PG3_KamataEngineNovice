@@ -41,7 +41,7 @@ void Player::Draw()
 	{
 		bullet[i].Draw();
 	}
-	Novice::DrawBox(int(pos_.x), int(pos_.y), 25, 25, 0.0f, WHITE, kFillModeSolid);
+	Novice::DrawBox(int(pos_.x), int(pos_.y), int(width), int(height), 0.0f, WHITE, kFillModeSolid);
 }
 
 void Player::MoveRight()
