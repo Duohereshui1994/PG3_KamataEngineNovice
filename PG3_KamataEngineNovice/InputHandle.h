@@ -9,11 +9,13 @@ public:
 	void AssignMoveRightCommand2PressKeyD();
 	void AssignMoveUpCommand2PressKeyW();
 	void AssignMoveDownCommand2PressKeyS();
+	void AssignShootCommand2PressKeyJ();
 
 private:
 	ICommand* pressKeyA_;
 	ICommand* pressKeyD_;
 	ICommand* pressKeyW_;
 	ICommand* pressKeyS_;
+	ICommand* pressKeyJ_;
 };
 

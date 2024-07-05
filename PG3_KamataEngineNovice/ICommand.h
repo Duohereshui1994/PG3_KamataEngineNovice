@@ -34,3 +34,9 @@ class MoveDownCommand : public ICommand
 public:
 	void Exec(Player& player) override;
 };
+
+class ShootCommand : public ICommand
+{
+public:
+	void Exec(Player& player) override;
+};

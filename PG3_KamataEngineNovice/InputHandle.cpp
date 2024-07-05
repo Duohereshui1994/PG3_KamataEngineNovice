@@ -3,6 +3,7 @@
 
 ICommand* InputHandle::HandleInput()
 {
+	//move
 	if (Novice::CheckHitKey(DIK_D)) {
 		return pressKeyD_;
 	}
@@ -14,6 +15,11 @@ ICommand* InputHandle::HandleInput()
 	}
 	else if (Novice::CheckHitKey(DIK_S)) {
 		return pressKeyS_;
+	}
+
+	//shoot
+	if (Novice::CheckHitKey(DIK_J)) {
+		return pressKeyJ_;
 	}
 	return nullptr;
 }
@@ -40,4 +46,10 @@ void InputHandle::AssignMoveDownCommand2PressKeyS()
 {
 	ICommand* command = new MoveDownCommand();
 	this->pressKeyS_ = command;
+}
+
+void InputHandle::AssignShootCommand2PressKeyJ()
+{
+	ICommand* command = new ShootCommand();
+	this->pressKeyJ_ = command;
 }

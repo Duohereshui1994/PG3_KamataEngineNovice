@@ -12,6 +12,7 @@ void StageScene::Init()
 	inputHandler_->AssignMoveRightCommand2PressKeyD();
 	inputHandler_->AssignMoveUpCommand2PressKeyW();
 	inputHandler_->AssignMoveDownCommand2PressKeyS();
+	inputHandler_->AssignShootCommand2PressKeyJ();
 
 	player_ = new Player();
 }
@@ -39,5 +40,7 @@ void StageScene::Draw()
 	Novice::ScreenPrintf(100, 360, "Stage");
 	Novice::ScreenPrintf(100, 400, "Press Space to Clear");
 	Novice::ScreenPrintf(100, 440, "Press A or D to Move");
+	Novice::ScreenPrintf(100, 480, "%f",player_->bullet->GetPos().x);
+	Novice::ScreenPrintf(100, 520, "%f",player_->bullet->GetPos().y);
 	player_->Draw();
 }

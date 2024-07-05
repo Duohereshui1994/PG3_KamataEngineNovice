@@ -19,3 +19,8 @@ void MoveDownCommand::Exec(Player& player)
 {
 	player.MoveDown();
 }
+
+void ShootCommand::Exec(Player& player)
+{
+	player.Shoot();
+}
