@@ -9,8 +9,8 @@ Player::Player()
 	width = 64.0f;
 	height = 64.0f;
 	isAlive_ = true;
-	CD = 0;
-
+	CD_ = 0;
+	texturePlayer_ = Novice::LoadTexture("./RS/player.png");
 	bullets_.resize(10);
 }
 
@@ -21,7 +21,7 @@ void Player::Init()
 	hpMax_ = 100.0f;;
 	hp_ = hpMax_;
 	isAlive_ = true;
-	CD = 0;
+	CD_ = 0;
 	for (auto& bullet : bullets_)
 	{
 		bullet.Initialize();
@@ -43,7 +43,7 @@ void Player::Draw()
 	{
 		bullet.Draw();
 	}
-	Novice::DrawBox(int(pos_.x), int(pos_.y), int(width), int(height), 0.0f, WHITE, kFillModeSolid);
+	Novice::DrawSprite(int(pos_.x), int(pos_.y), texturePlayer_, 1, 1, 0.0f, WHITE);
 }
 
 void Player::MoveRight()

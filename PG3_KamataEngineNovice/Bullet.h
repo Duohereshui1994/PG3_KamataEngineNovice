@@ -32,5 +32,7 @@ private:
 	float height_;
 	//フラグ
 	bool isShot_;
+	//画像
+	int textureBullet_;
 };
 

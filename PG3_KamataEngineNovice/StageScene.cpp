@@ -14,7 +14,17 @@ void StageScene::Init()
 	inputHandler_->AssignMoveDownCommand2PressKeyS();
 	inputHandler_->AssignShootCommand2PressKeyJ();
 
+
+	background_ = new Background();
+
 	player_ = new Player();
+
+	for (auto i = 0; i < enemyCount; ++i) {
+		Enemy* newEnemy = new Enemy();
+		newEnemy->Init();
+		enemies_.push_back(newEnemy);
+	}
+
 }
 
 void StageScene::Update(char keys[], char preKeys[])
@@ -31,7 +41,18 @@ void StageScene::Update(char keys[], char preKeys[])
 		iCommand_->Exec(*player_);
 	}
 
-	player_->Update();
+
+	// スレッドで　player_ と background_　更新 
+	std::thread backgroundThread(&Background::Update, background_);
+	std::thread playerThread(&Player::Update, player_);
+
+	// wait for thread complete
+	backgroundThread.join();
+	playerThread.join();
+
+	for (Enemy* enemy : enemies_) {
+		enemy->Update();
+	}
 }
 
 void StageScene::Draw()
@@ -40,5 +61,11 @@ void StageScene::Draw()
 	Novice::ScreenPrintf(100, 360, "Stage");
 	Novice::ScreenPrintf(100, 400, "Press Space to Clear");
 	Novice::ScreenPrintf(100, 440, "Press A or D to Move");
+
+	background_->Draw();
 	player_->Draw();
+
+	for (Enemy* enemy : enemies_) {
+		enemy->Draw();
+	}
 }

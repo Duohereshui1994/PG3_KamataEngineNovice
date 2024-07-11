@@ -1,8 +1,12 @@
 #pragma once
+#include <list>
+#include <thread>
 #include "IScene.h"
 #include "InputHandle.h"
 #include "ICommand.h"
+#include "Background.h"
 #include "Player.h"
+#include "Enemy.h"
 
 class StageScene : public IScene
 {
@@ -16,4 +20,8 @@ private:
 	InputHandle* inputHandler_ = nullptr;
 	ICommand* iCommand_ = nullptr;
 	Player* player_ = nullptr;
+	Background* background_ = nullptr;
+
+	static inline const int enemyCount = 5;
+	std::list<Enemy*> enemies_;
 };

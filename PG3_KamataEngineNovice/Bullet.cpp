@@ -8,6 +8,7 @@ Bullet::Bullet()
 	width_ = 32.0f;
 	height_ = 32.0f;
 	speed_ = 30.0f;
+	textureBullet_ = Novice::LoadTexture("./RS/bullet.png");
 }
 
 Bullet::~Bullet()
@@ -36,8 +37,6 @@ void Bullet::Draw()
 {
 	if (isShot_)
 	{
-		//int Texture_Bullet = Novice::LoadTexture("./RS/bulle_player.png");
-		//Novice::DrawSprite((int)pos_.x, (int)pos_.y + 16, Texture_Bullet, 1, 1, 0.0f, WHITE);
-		Novice::DrawBox((int)pos_.x, (int)pos_.y + 16, 32, 32, 0.0f, BLUE, kFillModeSolid);
+		Novice::DrawSprite((int)pos_.x, (int)pos_.y + 16, textureBullet_, 1, 1, 0.0f, WHITE);
 	}
 }

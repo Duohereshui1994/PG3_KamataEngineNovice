@@ -1,25 +1,18 @@
 #pragma once
-#include <vector>
 #include "Vector2.h"
 #include "Novice.h"
-#include "Bullet.h"
-class Player
+class Enemy
 {
 public:
-	std::vector<Bullet> bullets_;
 	//コンストラクタ
-	Player();
+	Enemy();
 
 	void Init();
 	void Update();
 	void Draw();
 
-	//メンバ変数
-	void MoveRight();
-	void MoveLeft();
-	void MoveUp();
-	void MoveDown();
-	void Shoot();
+	//set flag
+	bool setIsAlive(bool value) { this->isAlive_ = value; }
 
 private:
 	//座標
@@ -32,12 +25,9 @@ private:
 	float height;
 	//フラグ
 	bool isAlive_;
-	//HP
-	float hpMax_;
-	float hp_;
-	//攻撃の間隔
-	int CD_;
+	//蘇る時間
+	int respawnTimer_;
 	//画像
-	int texturePlayer_;
+	int textureEnemy_;
 };
 
