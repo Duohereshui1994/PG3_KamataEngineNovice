@@ -51,7 +51,7 @@ void StageScene::Update(char keys[], char preKeys[])
 {
 	//Spaceキーを押すとクリア画面に移行
 	if (!preKeys[DIK_SPACE] && keys[DIK_SPACE]) {
-		sceneNo = CLEAR;
+		//sceneNo = CLEAR;
 	}
 
 	if (score_ == 10) {
