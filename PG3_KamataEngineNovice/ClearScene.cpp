@@ -14,7 +14,7 @@ void ClearScene::Update(char keys[], char preKeys[])
 
 void ClearScene::Draw()
 {
-	//debug用
-	Novice::ScreenPrintf(100, 360, "Clear");
-	Novice::ScreenPrintf(100, 400, "Press Space To Title");
+	int textureEnd = Novice::LoadTexture("./RS/end.png");
+
+	Novice::DrawSprite(0, 0, textureEnd, 1, 1, 0.0f, WHITE);
 }

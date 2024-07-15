@@ -6,12 +6,18 @@ Player::Player()
 	speed_ = 5.0f;
 	hpMax_ = 100.0f;;
 	hp_ = hpMax_;
-	width = 64.0f;
-	height = 64.0f;
+	width_ = 64.0f;
+	height_ = 64.0f;
 	isAlive_ = true;
 	CD_ = 0;
 	texturePlayer_ = Novice::LoadTexture("./RS/player.png");
 	bullets_.resize(10);
+}
+
+Player::~Player()
+{
+
+
 }
 
 void Player::Init()
@@ -38,12 +44,16 @@ void Player::Update()
 
 void Player::Draw()
 {
-	//描画
+	//本体描画
 	for (auto& bullet : bullets_)
 	{
 		bullet.Draw();
 	}
 	Novice::DrawSprite(int(pos_.x), int(pos_.y), texturePlayer_, 1, 1, 0.0f, WHITE);
+
+	//HpBar
+	Novice::DrawBox(640, 700, int(hp_ / hpMax_ * -150), 20, 0.0f, RED, kFillModeSolid);
+	Novice::DrawBox(640, 700, int(hp_ / hpMax_ * 150), 20, 0.0f,RED, kFillModeSolid);
 }
 
 void Player::MoveRight()
@@ -77,5 +87,14 @@ void Player::Shoot()
 		}
 	}
 
+}
+
+void Player::OnCollision(const Enemy* enemy)
+{
+	(void)enemy;
+	hp_ -= 10.0f;
+	if (hp_ <= 0.0f) {
+		isAlive_ = false;
+	}
 }
 

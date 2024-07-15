@@ -3,12 +3,17 @@
 #include "Vector2.h"
 #include "Novice.h"
 #include "Bullet.h"
+
+class Enemy;
+
 class Player
 {
 public:
 	std::vector<Bullet> bullets_;
 	//コンストラクタ
 	Player();
+	//デストラクタ
+	~Player();
 
 	void Init();
 	void Update();
@@ -21,15 +26,26 @@ public:
 	void MoveDown();
 	void Shoot();
 
+	//位置取得
+	Vector2 GetPos() { return pos_; }
+	//幅取得
+	float GetWidth() { return width_; }
+	//高さ取得
+	float GetHeight() { return height_; }
+	//flag取得
+	bool GetIsAlive() { return isAlive_; }
+	//当たり判定
+	void OnCollision(const Enemy* enemy);
+
 private:
 	//座標
 	Vector2 pos_;
 	//速度
 	float speed_;
 	//幅
-	float width;
+	float width_;
 	//高さ
-	float height;
+	float height_;
 	//フラグ
 	bool isAlive_;
 	//HP

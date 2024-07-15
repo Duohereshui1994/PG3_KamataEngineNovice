@@ -15,7 +15,7 @@ void TitleScene::Update(char keys[], char preKeys[])
 
 void TitleScene::Draw()
 {
-	//debug用
-	Novice::ScreenPrintf(100, 360, "Title");
-	Novice::ScreenPrintf(100, 400, "Press Space To Stage");
+	int textureTitle = Novice::LoadTexture("./RS/title.png");
+
+	Novice::DrawSprite(0, 0, textureTitle, 1, 1, 0.0f, WHITE);
 }

@@ -40,3 +40,9 @@ void Bullet::Draw()
 		Novice::DrawSprite((int)pos_.x, (int)pos_.y + 16, textureBullet_, 1, 1, 0.0f, WHITE);
 	}
 }
+
+void Bullet::OnCollision(const Enemy* enemy)
+{
+	(void)enemy;
+	isShot_ = false;
+}
