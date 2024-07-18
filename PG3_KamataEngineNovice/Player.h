@@ -9,14 +9,17 @@ class Enemy;
 class Player
 {
 public:
+	//STLコンテナ　弾の管理
 	std::vector<Bullet> bullets_;
 	//コンストラクタ
 	Player();
 	//デストラクタ
 	~Player();
-
+	//初期化
 	void Init();
+	//更新
 	void Update();
+	//描画
 	void Draw();
 
 	//メンバ変数

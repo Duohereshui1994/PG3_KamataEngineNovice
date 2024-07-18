@@ -21,6 +21,7 @@ void Enemy::Init()
 
 void Enemy::Update()
 {
+	//蘇る
 	if (!isAlive_)
 	{
 		if (respawnTimer_ > 0)
@@ -35,6 +36,7 @@ void Enemy::Update()
 			isAlive_ = true;
 		}
 	}
+	//移動
 	else
 	{
 		pos_.x -= speed_;

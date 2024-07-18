@@ -49,7 +49,7 @@ void StageScene::Init()
 
 void StageScene::Update(char keys[], char preKeys[])
 {
-	//Spaceキーを押すとクリア画面に移行
+	//Spaceキーを押すとクリア画面に移行 （廃棄）
 	if (!preKeys[DIK_SPACE] && keys[DIK_SPACE]) {
 		//sceneNo = CLEAR;
 	}
@@ -81,7 +81,7 @@ void StageScene::Update(char keys[], char preKeys[])
 	playerThread.join();
 
 
-
+	//敵の更新
 	for (Enemy* enemy : enemies_) {
 		enemy->Update();
 	}
